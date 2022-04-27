@@ -19,11 +19,12 @@ class Population(Individual):
             x3 = random.random()
             x4 = random.random()
             x5 = random.random()
-            population.append(Individual(x1, x2, x3, x4, x5).__str__())
+            population.append(Individual(x1, x2, x3, x4, x5))
             cont = cont + 1
-            population.sort(reverse = True)
+            population.sort(key=lambda individual: individual.fitness, reverse=True)
         return population
 
+    
     def three_best_individuals(array: List[str]) -> List[str]:
         three_best = []
         
@@ -32,9 +33,8 @@ class Population(Individual):
         
         return three_best
 
-    def new_generation():
-        population = []
+    def new_generation(best: List[str], generation_result: List[str]) -> List[str]:
+        population = best
 
-population = Population.generate_population(10)
-population_elite = Population.three_best_individuals(population)
-print(population_elite)
+        for i in generation_result:
+            population.append(i)
