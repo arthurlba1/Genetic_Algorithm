@@ -19,4 +19,4 @@ class Individual:
         self.fitness = (self.x5**5)+(self.x4**4)+(self.x3**3)+(self.x2**2)+(self.x1**1)
 
     def __str__(self):
-        return f'Individual = {self.fitness}'
+        return f'Individual = x1: {self.x1} - x2: {self.x2} - x3: {self.x3} - x4: {self.x4} - x5: {self.x5} - Fitness: {self.fitness}'
