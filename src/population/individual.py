@@ -16,7 +16,7 @@ class Individual:
         self.x3 = x3
         self.x4 = x4
         self.x5 = x5
-        self.weight = (self.x5**5)+(self.x4**4)+(self.x3**3)+(self.x2**2)+(self.x1**1)
+        self.fitness = (self.x5**5)+(self.x4**4)+(self.x3**3)+(self.x2**2)+(self.x1**1)
 
     def __str__(self):
-        return f'Individual = {self.weight}'
+        return f'Individual = {self.fitness}'
