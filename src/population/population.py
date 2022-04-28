@@ -2,9 +2,8 @@
 import random
 from typing import List
 
-from pyrfc3339 import generate
 
-from individual import Individual
+from src.population.individual import Individual
 
 
 class Population(Individual):
