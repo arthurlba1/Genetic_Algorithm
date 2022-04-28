@@ -4,7 +4,6 @@ import random
 
 from src.helpers.mutation_case import MutationCase
 from src.population.individual import Individual
-from src.population.population import Population
 
 
 class BinaryTournament:
