@@ -26,10 +26,8 @@ class Population(Individual):
     @staticmethod
     def three_best_individuals(array: List[str]) -> List[str]:
         three_best = []
-        
         for i in range(3):   
             three_best.append(array[i])
-        
         return three_best
 
     @staticmethod

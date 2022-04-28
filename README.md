@@ -23,10 +23,20 @@ generation to the next, avoiding the loss of important information present in
 high-evaluated individuals, which may be lost during the selection and crossing processes.
 In this genetic algorithm, elitism serves the 3 best individuals
 
+~~~python
+    def three_best_individuals(array: List[str]) -> List[str]:
+        three_best = []
+        for i in range(3):   
+            three_best.append(array[i])
+        return three_best
+~~~
+> This function return the elite of the current generation. (Three individuals)
 
 ## Binary tournament selection
 Two individuals are drawn at random, their aptitudes are compared and the fittest of
 these two is selected. This procedure is repeated for each individual to be selected.
+
+>The **random** library is used with the choice method to choose the two individuals
 
 ## Crossover
 The crossover system takes two individuals from the generation and changes their 'DNA' or
@@ -64,3 +74,5 @@ The value of some 'x' is randomly generated again
             mutation_list.append(individual)
         return mutation_list
 ~~~
+
+## Function Lifecycle 
