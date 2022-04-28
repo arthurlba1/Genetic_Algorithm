@@ -23,7 +23,7 @@ class BinaryTournament:
         return crossover_individuals
 
     @staticmethod
-    def mutation(population: List[str], mutation_rate: int):
+    def mutation(population: List[str], mutation_rate: int) -> List[Individual]:
         mutation_list = []
         for i in range(int((len(population)-3)*mutation_rate/100)):
             individual = random.choice(population)

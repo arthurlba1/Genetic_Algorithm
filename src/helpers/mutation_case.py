@@ -1,11 +1,13 @@
 """handles mutation case"""
 import random
 
+from src.population.individual import Individual
+
 
 class MutationCase:
 
     @staticmethod
-    def mutation_case_elseif(comparator: int, individual: str):
+    def mutation_case_elseif(comparator: int, individual: Individual) -> Individual:
         if comparator == 1:
             individual.x1 = random.random()
             individual.fitness = (individual.x5**5)+(individual.x4**4)+(individual.x3**3)+(individual.x2**2)+(individual.x1**1)

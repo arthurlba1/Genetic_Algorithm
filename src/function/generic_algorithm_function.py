@@ -24,7 +24,11 @@ class GeneticAlgorithm:
             print(three_best[0].__str__())
             crossover = BinaryTournament.select_tournament(population=current_generation, mutation_rate=mutation_rate)
             mutation = BinaryTournament.mutation(population=current_generation, mutation_rate=mutation_rate)
-            current_generation = Population.new_generation(three_best, mutation, crossover)
+            current_generation = Population.new_generation(
+                best=three_best,
+                mutation_list=mutation,
+                crossover_list=crossover
+            )
 
 
 GeneticAlgorithm.start_population()
