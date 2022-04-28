@@ -33,8 +33,10 @@ class Population(Individual):
         
         return three_best
 
-    def new_generation(best: List[str], generation_result: List[str]) -> List[str]:
-        population = best
-
-        for i in generation_result:
-            population.append(i)
+    def new_generation(
+        best: List[str],
+        mutation_list: List[str],
+        crossover_list: List[str]
+        ) -> List[str]:
+        population = best + mutation_list + crossover_list
+        return population
