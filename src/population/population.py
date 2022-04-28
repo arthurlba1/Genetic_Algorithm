@@ -8,8 +8,8 @@ from src.population.individual import Individual
 
 class Population(Individual):
 
-
-    def generate_population(size: int) -> List[str]:
+    @staticmethod
+    def generate_population(size: int) -> List[Individual]:
         cont = 0
         population = []
         while cont < size:
@@ -23,7 +23,7 @@ class Population(Individual):
             population.sort(key=lambda individual: individual.fitness, reverse=True)
         return population
 
-    
+    @staticmethod
     def three_best_individuals(array: List[str]) -> List[str]:
         three_best = []
         
@@ -32,10 +32,7 @@ class Population(Individual):
         
         return three_best
 
-    def new_generation(
-        best: List[str],
-        mutation_list: List[str],
-        crossover_list: List[str]
-        ) -> List[str]:
+    @staticmethod
+    def new_generation(best: List[str], mutation_list: List[str], crossover_list: List[str]) -> List[str]:
         population = best + mutation_list + crossover_list
         return population
