@@ -9,7 +9,7 @@ from src.population.individual import Individual
 class BinaryTournament:
 
     @staticmethod
-    def select_tournament(population: List[str], mutation_rate: int) -> List[Individual]:
+    def select_tournament(population: List[Individual], mutation_rate: int) -> List[Individual]:
         crossover_individuals = []
         for i in range(int((len(population)-3)*(100-mutation_rate)/100)):
             individual_one = random.choice(population)
@@ -23,7 +23,7 @@ class BinaryTournament:
         return crossover_individuals
 
     @staticmethod
-    def mutation(population: List[str], mutation_rate: int) -> List[Individual]:
+    def mutation(population: List[Individual], mutation_rate: int) -> List[Individual]:
         mutation_list = []
         for i in range(int((len(population)-3)*mutation_rate/100)):
             individual = random.choice(population)

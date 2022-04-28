@@ -24,13 +24,13 @@ class Population(Individual):
         return population
 
     @staticmethod
-    def three_best_individuals(array: List[str]) -> List[str]:
+    def three_best_individuals(array: List[Individual]) -> List[Individual]:
         three_best = []
         for i in range(3):   
             three_best.append(array[i])
         return three_best
 
     @staticmethod
-    def new_generation(best: List[str], mutation_list: List[Individual], crossover_list: List[Individual]) -> List[str]:
+    def new_generation(best: List[Individual], mutation_list: List[Individual], crossover_list: List[Individual]) -> List[Individual]:
         population = best + mutation_list + crossover_list
         return population
