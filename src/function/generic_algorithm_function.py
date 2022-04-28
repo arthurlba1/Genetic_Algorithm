@@ -11,7 +11,6 @@ class GeneticAlgorithm:
 
     @staticmethod
     def start_population(
-        self,
         population=InputAlgorithm.POPULATION_SIZE,
         mutation_rate=InputAlgorithm.MUTATION_RATE,
         number_generations=InputAlgorithm.NUMBER_GENERATIONS
@@ -24,7 +23,7 @@ class GeneticAlgorithm:
             best_generation.append(three_best[0].fitness)
             print(three_best[0].__str__())
             crossover = BinaryTournament.select_tournament(population=current_generation, mutation_rate=mutation_rate)
-            mutation = BinaryTournament.mutation(current_generation, mutation_rate)
+            mutation = BinaryTournament.mutation(population=current_generation, mutation_rate=mutation_rate)
             current_generation = Population.new_generation(three_best, mutation, crossover)
 
 
