@@ -9,15 +9,15 @@ from src.population.individual import Individual
 class Population(Individual):
 
     @staticmethod
-    def generate_population(size: int) -> List[Individual]:
+    def generate_population(size: int, interval: List[int]) -> List[Individual]:
         cont = 0
         population = []
         while cont < size:
-            x1 = random.random()
-            x2 = random.random()
-            x3 = random.random()
-            x4 = random.random()
-            x5 = random.random()
+            x1 = random.uniform(interval[0], interval[1])
+            x2 = random.uniform(interval[0], interval[1])
+            x3 = random.uniform(interval[0], interval[1])
+            x4 = random.uniform(interval[0], interval[1])
+            x5 = random.uniform(interval[0], interval[1])
             population.append(Individual(x1, x2, x3, x4, x5))
             cont = cont + 1
             population.sort(key=lambda individual: individual.fitness, reverse=True)

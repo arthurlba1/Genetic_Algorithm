@@ -13,10 +13,11 @@ class GeneticAlgorithm:
     def start_population(
         population=InputAlgorithm.POPULATION_SIZE,
         mutation_rate=InputAlgorithm.MUTATION_RATE,
-        number_generations=InputAlgorithm.NUMBER_GENERATIONS
+        number_generations=InputAlgorithm.NUMBER_GENERATIONS,
+        search_interval=InputAlgorithm.SEARCH_RANGE
     ):
 
-        current_generation = Population.generate_population(population)
+        current_generation = Population.generate_population(size=population, interval=search_interval)
         best_generation = []
         history = []
         for i in range(number_generations):
