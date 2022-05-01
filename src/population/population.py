@@ -24,8 +24,9 @@ class Population(Individual):
         return population
 
     @staticmethod
-    def three_best_individuals(array: List[Individual]) -> List[Individual]:
+    def elitism_of_three(array: List[Individual]) -> List[Individual]:
         three_best = []
+        array.sort(key=lambda individual: individual.fitness, reverse=True)
         for i in range(3):   
             three_best.append(array[i])
         return three_best

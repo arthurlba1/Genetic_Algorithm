@@ -21,7 +21,7 @@ class GeneticAlgorithm:
         best_generation = []
         history = []
         for i in range(number_generations):
-            three_best = Population.three_best_individuals(current_generation)
+            three_best = Population.elitism_of_three(current_generation)
             best_generation.append(three_best[0].fitness)
             print(three_best[0].__str__())
             crossover = BinaryTournament.select_tournament(population=current_generation, mutation_rate=mutation_rate)
