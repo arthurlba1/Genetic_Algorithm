@@ -18,12 +18,11 @@ class GeneticAlgorithm:
     ):
 
         current_generation = Population.generate_population(size=population, interval=search_interval)
-        best_generation = []
         history = []
         for i in range(number_generations):
-            three_best = Population.elitism_of_three(current_generation)
-            best_generation.append(three_best[0].fitness)
-            print(three_best[0].__str__())
+            elitism = Population.elitism_of_three(current_generation)
+            history.append(elitism[0].fitness)
+            print(elitism[0].__str__())
             crossover = BinaryTournament.select_tournament(population=current_generation, mutation_rate=mutation_rate)
             mutation = BinaryTournament.mutation(
                 population=current_generation,
@@ -31,11 +30,11 @@ class GeneticAlgorithm:
                 interval=search_interval
             )
             current_generation = Population.new_generation(
-                best=three_best,
+                best=elitism,
                 mutation_list=mutation,
                 crossover_list=crossover
             )
-        GraphFunctionGeneticAlgorithm.plot_fx_graph(history)
+        GraphFunctionGeneticAlgorithm.plot_fx_graph(arr=history)
 
 
 GeneticAlgorithm.start_population()
