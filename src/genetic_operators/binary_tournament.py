@@ -23,11 +23,15 @@ class BinaryTournament:
         return crossover_individuals
 
     @staticmethod
-    def mutation(population: List[Individual], mutation_rate: int) -> List[Individual]:
+    def mutation(population: List[Individual], mutation_rate: int, interval: List[int]) -> List[Individual]:
         mutation_list = []
         for i in range(int((len(population)-3)*mutation_rate/100)):
             individual = random.choice(population)
             mutation_one = random.randint(1, 5)
-            individual = MutationCase.mutation_case_elseif(comparator=mutation_one, individual=individual)
+            individual = MutationCase.mutation_case_elseif(
+                comparator=mutation_one,
+                individual=individual,
+                interval=interval
+            )
             mutation_list.append(individual)
         return mutation_list
